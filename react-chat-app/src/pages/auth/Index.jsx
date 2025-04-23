@@ -4,7 +4,9 @@ import Victory from "../../assets/victory.svg"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-
+import { toast } from 'sonner'
+import {apiClient} from "../../lib/api-client"
+import { SIGNUP_ROUTE } from '../../utils/constants'
 
 
 function Index() {
@@ -12,11 +14,30 @@ function Index() {
     const [password,setPassword] = useState("")
     const [confirmPassword,setConfirmPassword] = useState("")
 
+    const vaildateSignup=()=>{
+        if(!email.length){
+            toast.error("email is required");
+            return false;
+        }
+        if(!password.length){
+            toast.error("password is required");
+            return false;
+        }
+        if(password!==confirmPassword){
+            toast.error("password and confirm password should be same");
+            return false;
+        }
+        return true;
+    }
+
     const handleLogin=async()=>{
         
     }
     const handleSignUp=async()=>{
-
+if(vaildateSignup()){
+    const response=await apiClient.post(SIGNUP_ROUTE,{email,password});
+    console.log(response)
+}
     }
   return (
     <div className='h-[100vh] w-[100vw] flex items-center justify-center '>
