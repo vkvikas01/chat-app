@@ -48,10 +48,10 @@ function Index() {
     const handleLogin = async () => {
         if (validatelogin()) {
             const response = await apiClient.post(LOGIN_ROUTE, { email, password }, { withCredentials: true })
-            console.log(response)
+
             if (response.data.user.user.id) {
-                if (response.data.user.user.profileSetup) {  navigate('/chat') }
-                else {  navigate('/profile') }
+                if (response.data.user.user.profileSetup) { navigate('/chat') }
+                else { navigate('/profile') }
 
             }
         }
