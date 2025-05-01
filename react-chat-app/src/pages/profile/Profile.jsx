@@ -84,11 +84,6 @@ function Profile() {
         setUserInfo({ ...userInfo, image: response.data.image });
         toast.success("Image updated succesfully.")
       }
-      // const reader=new FileReader();
-      // reader.onload=()=>{
-      //   setImage(reader.result);
-      // }
-      // reader.readAsDataURL(file)
     }
   }
 
