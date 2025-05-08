@@ -27,6 +27,7 @@ function ProfileInfo() {
             }
         } catch (error) {
             console.log(error)
+            
         }
     }
     return (
