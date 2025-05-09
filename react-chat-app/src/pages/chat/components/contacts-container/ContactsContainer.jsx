@@ -1,5 +1,6 @@
 import React from 'react'
 import ProfileInfo from './components/profile-info/ProfileInfo';
+import NewDm from './components/new-dm/NewDm';
 
 function ContactsContainer() {
   return (
@@ -10,6 +11,7 @@ function ContactsContainer() {
       <div className="my-5">
         <div className="flex items-center justify-between pr-10">
           <Title text="Direct Message"/>
+          <NewDm/>
         </div>
       </div>
       <div className="my-5">
